@@ -50,12 +50,17 @@
 
 ## 📦 Cài đặt
 
-### Cách 1 — Chạy bản `.exe` đóng gói sẵn
+### Cách 1 — Chạy bản đóng gói sẵn
 
-1. Tải file `Viet2EN.exe` từ trang [Releases](https://github.com/Duon-gg/Viet2EN_Hotkey_Translator/releases)
-2. Đặt vào thư mục riêng (ví dụ `C:\Tools\Viet2EN\`)
-3. Chạy `Viet2EN.exe` — icon xuất hiện ở khay hệ thống (system tray)
-4. Lần đầu: cửa sổ cài đặt tự mở → click **Tải mô hình (Download Model)** để tải model dịch (~150 MB, cần internet cho bước này)
+* **Lựa chọn A: Bản Offline đóng gói sẵn (Khuyên dùng)**
+  1. Tải file **`Viet2EN_Offline_Bundle.zip`** từ trang [Releases](https://github.com/Duon-gg/Viet2EN_Hotkey_Translator/releases).
+  2. Giải nén vào thư mục riêng (ví dụ `C:\Tools\Viet2EN\`).
+  3. Chạy `Viet2EN.exe` — ứng dụng sẽ hoạt động offline ngay lập tức mà không cần kết nối internet, do các mô hình dịch đã được tích hợp sẵn trong thư mục `models/`.
+
+* **Lựa chọn B: Bản `.exe` gọn nhẹ**
+  1. Tải file `Viet2EN.exe` từ trang [Releases](https://github.com/Duon-gg/Viet2EN_Hotkey_Translator/releases).
+  2. Đặt vào thư mục riêng.
+  3. Chạy `Viet2EN.exe`. Lần đầu chạy, cửa sổ cài đặt sẽ tự mở → click **Tải mô hình (Download Model)** để tải model dịch (~150 MB, cần kết nối internet cho bước tải này).
 
 ### Cách 2 — Chạy từ source
 

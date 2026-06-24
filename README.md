@@ -52,12 +52,17 @@ An offline Vietnamese ↔ English translator that lives in your system tray. Sel
 
 ## 📦 Installation
 
-### Option 1 — Pre-built `.exe`
+### Option 1 — Pre-built Releases
 
-1. Download `Viet2EN.exe` from the [Releases](https://github.com/Duon-gg/Viet2EN_Hotkey_Translator/releases) page
-2. Place it in its own folder (e.g. `C:\Tools\Viet2EN\`)
-3. Run `Viet2EN.exe` — icon appears in the system tray
-4. On first launch: the settings window opens automatically → click **Download Model** to fetch translation models (~150 MB, internet required for this step only)
+* **Option A: Offline Bundle (Recommended)**
+  1. Download **`Viet2EN_Offline_Bundle.zip`** from the [Releases](https://github.com/Duon-gg/Viet2EN_Hotkey_Translator/releases) page.
+  2. Extract the ZIP archive to its own folder (e.g. `C:\Tools\Viet2EN\`).
+  3. Run `Viet2EN.exe` — it will immediately start offline without requiring any internet connection, as the translation models are pre-bundled in the `models/` directory.
+
+* **Option B: Lightweight `.exe`**
+  1. Download `Viet2EN.exe` from the [Releases](https://github.com/Duon-gg/Viet2EN_Hotkey_Translator/releases) page.
+  2. Place it in its own folder.
+  3. Run `Viet2EN.exe`. On first launch, the settings window will open automatically → click **Download Model** to fetch the translation models (~150 MB, internet required for this download step only).
 
 ### Option 2 — Run from source
 
