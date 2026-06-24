@@ -1,63 +1,65 @@
 # Viet2EN Hotkey Translator
 
-**🌐 [English](README.en.md) | Tiếng Việt**
+**🌐 English | [Tiếng Việt](README.vi.md)**
 
-**Dịch ngay tại chỗ bạn đang gõ — bôi đen, nhấn F2, xong.**
+**Translate right where you're typing — select, press F2, done.**
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)
 
+An offline Vietnamese ↔ English translator that lives in your system tray. Select any text in any app, press `F2`, and the translation replaces it in-place. No browser tabs, no copy-pasting into Google Translate. Powered by [Argos Translate](https://github.com/argosopentech/argos-translate) — your data never leaves your machine.
+
 ---
 
 
 
-## 📑 Mục lục
+## 📑 Table of Contents
 
-- [Tính năng](#-tính-năng)
-- [Yêu cầu hệ thống](#-yêu-cầu-hệ-thống)
-- [Cài đặt](#-cài-đặt)
-- [Cách sử dụng](#-cách-sử-dụng)
-- [Cấu hình nâng cao](#-cấu-hình-nâng-cao)
+- [Features](#-features)
+- [System Requirements](#-system-requirements)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Advanced Configuration](#-advanced-configuration)
 - [Troubleshooting](#-troubleshooting)
 - [Contributing](#-contributing)
 - [License & Credits](#-license--credits)
 
 ---
 
-## ✨ Tính năng
+## ✨ Features
 
-- ⚡ **Dịch tức thì bằng phím tắt** — bôi đen text ở bất kỳ app nào, nhấn `F2`, kết quả dán đè ngay tại chỗ. Không cần mở trình duyệt, không cần copy-paste qua Google Translate.
-- 🔌 **100% offline** — model dịch chạy cục bộ trên máy bạn. Không gửi dữ liệu đi đâu, không cần internet sau khi cài model.
-- 🧠 **Tự nhận diện chiều dịch** — gõ tiếng Việt thì dịch sang Anh, gõ tiếng Anh thì dịch sang Việt. Không cần chọn tay.
-- 💤 **Tự giải phóng RAM khi rảnh** — model tự unload khỏi bộ nhớ nếu bạn không dịch gì trong 30 phút (cấu hình được), tự load lại lần tiếp theo cần.
-- 🚀 **Khởi động gần như ngay lập tức** — app không load model khi mở, chỉ load lần đầu bạn nhấn dịch (Lazy Load).
-- 🔒 **Chống mở trùng** — chạy app lần hai sẽ tự thoát, không tạo bản sao.
-- 📋 **Bảo toàn clipboard** — sau khi dịch xong, clipboard cũ của bạn được tự động khôi phục.
+- ⚡ **Instant hotkey translation** — select text in any app, press `F2`, and the result overwrites it on the spot. No browser needed.
+- 🔌 **Fully offline** — translation models run locally. No data sent anywhere, no internet required after initial model download.
+- 🧠 **Auto language detection** — Vietnamese text gets translated to English, English text gets translated to Vietnamese. No manual switching.
+- 💤 **Smart RAM management** — models auto-unload from memory after 30 minutes of inactivity (configurable), reload on demand.
+- 🚀 **Near-instant startup** — the app doesn't load models on launch, only on first translation (Lazy Load).
+- 🔒 **Single instance guard** — launching the app twice silently exits the duplicate. No stacking.
+- 📋 **Clipboard preservation** — your original clipboard content is automatically restored after translation.
 
 ---
 
-## 💻 Yêu cầu hệ thống
+## 💻 System Requirements
 
-| Thành phần | Yêu cầu |
+| Component | Requirement |
 |---|---|
-| Hệ điều hành | Windows 10 / 11 |
-| Python | 3.10+ (nếu chạy từ source) |
-| Dung lượng đĩa | ~150 MB cho 2 model dịch (VI↔EN) |
-| RAM | ~500 MB khi model đang load |
+| OS | Windows 10 / 11 |
+| Python | 3.10+ (if running from source) |
+| Disk space | ~150 MB for both translation models (VI↔EN) |
+| RAM | ~500 MB when models are loaded |
 
 ---
 
-## 📦 Cài đặt
+## 📦 Installation
 
-### Cách 1 — Chạy bản `.exe` đóng gói sẵn
+### Option 1 — Pre-built `.exe`
 
-1. Tải file `Viet2EN.exe` từ trang [Releases](<!-- TODO: điền link GitHub Releases -->)
-2. Đặt vào thư mục riêng (ví dụ `C:\Tools\Viet2EN\`)
-3. Chạy `Viet2EN.exe` — icon xuất hiện ở khay hệ thống (system tray)
-4. Lần đầu: cửa sổ cài đặt tự mở → click **Tải mô hình (Download Model)** để tải model dịch (~150 MB, cần internet cho bước này)
+1. Download `Viet2EN.exe` from the [Releases](<!-- TODO: add GitHub Releases link -->) page
+2. Place it in its own folder (e.g. `C:\Tools\Viet2EN\`)
+3. Run `Viet2EN.exe` — icon appears in the system tray
+4. On first launch: the settings window opens automatically → click **Download Model** to fetch translation models (~150 MB, internet required for this step only)
 
-### Cách 2 — Chạy từ source
+### Option 2 — Run from source
 
 ```bash
 git clone https://github.com/<your-username>/Viet2EN_Hotkey_Translator.git
@@ -71,75 +73,75 @@ copy config.example.json config.json
 python main.py
 ```
 
-Lần chạy đầu tiên, cửa sổ cài đặt sẽ tự mở để bạn tải model dịch. Sau khi tải xong, các lần chạy sau không cần internet nữa.
+On first launch, the settings window opens automatically so you can download translation models. After that, no internet connection is needed.
 
-Chạy ẩn (không hiện console): click đúp file `run.vbs`.
-
----
-
-## 🎯 Cách sử dụng
-
-1. Bôi đen đoạn văn bản cần dịch — ở bất kỳ app nào (trình duyệt, Word, Notepad, IDE...)
-2. Nhấn **`F2`**
-3. Text hiện `...` trong lúc xử lý, rồi tự thay bằng bản dịch
-
-Không cần chuyển tab, không cần mở app nào khác. Clipboard cũ được tự động khôi phục sau khi dán.
-
-### Phím tắt & tùy chọn
-
-| Tùy chọn | Mặc định | Thay đổi qua |
-|---|---|---|
-| Phím dịch | `F2` | Cài đặt (chuột phải icon tray → **Cài đặt**) |
-| Phím khả dụng | `F2` đến `F8` | Dropdown trong cửa sổ Cài đặt |
-| Bật / tắt dịch | Bật | Menu chuột phải icon tray → **Bật dịch** |
+To run silently (no console window): double-click `run.vbs`.
 
 ---
 
-## ⚙ Cấu hình nâng cao
+## 🎯 Usage
 
-Sửa file `config.json` ở thư mục gốc (hoặc dùng giao diện Cài đặt):
+1. Select (highlight) the text you want to translate — in any app (browser, Word, Notepad, IDE...)
+2. Press **`F2`**
+3. The text briefly shows `...` while processing, then gets replaced with the translation
 
-| Field | Mô tả | Mặc định |
+No tab switching, no app to open. Your original clipboard is automatically restored after pasting.
+
+### Hotkeys & Options
+
+| Option | Default | Change via |
 |---|---|---|
-| `hotkey` | Phím tắt kích hoạt dịch. Nhận giá trị `f2` đến `f8` | `"f2"` |
-| `startup` | Tự chạy khi khởi động Windows | `false` |
-| `auto_unload_minutes` | Số phút không dùng trước khi tự giải phóng model khỏi RAM | `30` |
-| `restore_delay_seconds` | Thời gian chờ (giây) trước khi khôi phục lại clipboard gốc sau khi dán kết quả | `0.8` |
+| Translate key | `F2` | Settings (right-click tray icon → **Settings**) |
+| Available keys | `F2` through `F8` | Dropdown in Settings window |
+| Enable / disable | Enabled | Right-click tray icon → **Enable translation** |
 
-> Không có `config.json`? App tự tạo với giá trị mặc định. Hoặc copy từ `config.example.json`.
+---
+
+## ⚙ Advanced Configuration
+
+Edit `config.json` in the project root (or use the Settings UI):
+
+| Field | Description | Default |
+|---|---|---|
+| `hotkey` | Translation hotkey. Accepts `f2` through `f8` | `"f2"` |
+| `startup` | Auto-start with Windows | `false` |
+| `auto_unload_minutes` | Minutes of inactivity before unloading models from RAM | `30` |
+| `restore_delay_seconds` | Seconds to wait before restoring original clipboard after pasting the result | `0.8` |
+
+> No `config.json`? The app creates one with defaults. Or copy from `config.example.json`.
 
 ---
 
 ## 🔧 Troubleshooting
 
-**Nhấn F2 nhưng không có phản hồi gì:**
-→ Kiểm tra icon tray có hiện không. Nếu không thấy, app chưa chạy hoặc đã crash — mở file `viet2en.log` để xem chi tiết lỗi.
+**Pressing F2 does nothing:**
+→ Check if the tray icon is visible. If not, the app isn't running or has crashed — open `viet2en.log` for error details.
 
-**Dịch không hoạt động trên một số cửa sổ (Task Manager, Command Prompt chạy Admin...):**
-→ Giới hạn bảo mật của Windows: process chạy quyền User không thể gửi phím tắt vào process chạy quyền Administrator. Cách xử lý: tắt Viet2EN, chuột phải → **Run as Administrator** rồi chạy lại.
+**Translation doesn't work in certain windows (Task Manager, elevated Command Prompt...):**
+→ Windows security limitation: a User-level process cannot send keystrokes to an Administrator-level process. Fix: close Viet2EN, right-click → **Run as Administrator**.
 
-**Lần đầu nhấn F2 bị chậm (~2-5 giây):**
-→ Bình thường. Model dịch dùng Lazy Load — chỉ nạp vào RAM lần đầu bạn dịch. Các lần sau nhanh hơn nhiều, cho tới khi model tự unload do không sử dụng.
+**First F2 press is slow (~2-5 seconds):**
+→ Expected behavior. Translation models use Lazy Loading — they only load into RAM on the first translation. Subsequent translations are much faster until the model auto-unloads after idle timeout.
 
-**Tải model online bị lỗi:**
-→ Mở Cài đặt → dùng nút **Cài từ file (.argosmodel)** để cài thủ công. Tải file `.argosmodel` cho cặp `vi→en` và `en→vi` từ [Argos Translate packages](https://www.argosopentech.com/argospm/index/).
+**Online model download fails:**
+→ Open Settings → use **Install from file (.argosmodel)** to install manually. Download `.argosmodel` files for `vi→en` and `en→vi` from [Argos Translate packages](https://www.argosopentech.com/argospm/index/).
 
 ---
 
 ## 🤝 Contributing
 
-Phát hiện bug, có ý tưởng cải thiện, hoặc muốn gửi pull request — mở [Issue](<!-- TODO: điền link Issues -->) trên GitHub. Mọi đóng góp đều được hoan nghênh.
+Found a bug, have an idea, or want to send a pull request — open an [Issue](<!-- TODO: add Issues link -->) on GitHub. All contributions are welcome.
 
 ---
 
 ## 📄 License & Credits
 
-Phát hành theo giấy phép [MIT](LICENSE).
+Released under the [MIT License](LICENSE).
 
-Dự án được xây dựng trên nền các thư viện mã nguồn mở:
+Built on top of these open-source projects:
 
-- [Argos Translate](https://github.com/argosopentech/argos-translate) — engine dịch offline
-- [CTranslate2](https://github.com/OpenNMT/CTranslate2) — runtime inference cho model dịch
+- [Argos Translate](https://github.com/argosopentech/argos-translate) — offline translation engine
+- [CTranslate2](https://github.com/OpenNMT/CTranslate2) — inference runtime for translation models
 - [pystray](https://github.com/moses-palmer/pystray) — system tray icon
-- [keyboard](https://github.com/boppreh/keyboard) — bắt phím tắt toàn hệ thống
-- [pyperclip](https://github.com/asweigart/pyperclip) — tương tác clipboard
+- [keyboard](https://github.com/boppreh/keyboard) — system-wide hotkey capture
+- [pyperclip](https://github.com/asweigart/pyperclip) — clipboard interaction
